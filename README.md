@@ -1,129 +1,97 @@
-# 🧪 Estratégia de Testes – Portal de Notícias (CNN Brasil)
 
-## 📌 Visão Geral
 
-O projeto avaliado é um portal de notícias, como a CNN Brasil, cujo propósito é fornecer informações atualizadas sobre política, economia, esportes, entretenimento e outros temas. 
+# Teste de Automação para Portal de Notícias
 
-### 🎯 Características-chave:
-- Alto volume de tráfego e atualizações em tempo real
-- Conteúdo dinâmico (carregamento via JavaScript)
-- Diversidade de dispositivos e tamanhos de tela
-- Links internos e externos (matérias, vídeos, banners)
-- Páginas com vídeos, imagens e texto estruturado
+Este projeto apresenta um exemplo de automação de testes para um portal de notícias, utilizando o [Cypress](https://www.cypress.io/) para validar as funcionalidades críticas da aplicação.
 
-### ⚠️ Possíveis falhas ou gargalos:
-- **Links quebrados** ou redirecionamentos incorretos
-- **Lazy-loading** mal implementado, impactando SEO e testes automatizados
-- **Elementos invisíveis ou ocultos via CSS**, dificultando interação automatizada
-- **Desempenho lento** em redes móveis
-- **Problemas de acessibilidade** (ex: textos escondidos ou mal rotulados)
-- **Cross-browser issues** com layouts inconsistentes
+## 🚀 Sobre o Projeto
 
----
+O objetivo deste repositório é demonstrar uma suíte de testes automatizados para um portal de notícias como o da CNN Brasil. O foco é garantir a qualidade, estabilidade, performance e a boa experiência do usuário em diferentes dispositivos e navegadores.
 
-## 🧩 Estratégia de Testes
+### ✨ Funcionalidades Testadas
 
-### ✅ Objetivo
-Garantir que o portal funcione corretamente em diferentes dispositivos, navegadores e cenários de uso real, com foco em **estabilidade, performance e experiência do usuário**.
+  * **Busca de Artigos:** Validação do campo de busca e da exibição de resultados.
+  * **Paginação:** Verificação da navegação entre as páginas de resultados.
+  * **Acesso a Artigos:** Garantia de que os artigos podem ser abertos corretamente a partir da página de busca.
 
----
+### 🛠️ Tecnologias Utilizadas
 
-## 🔎 Tipos de Testes Aplicáveis
+  * [Cypress](https://www.cypress.io/): Framework de testes end-to-end.
+  * [Node.js](https://nodejs.org/en/): Ambiente de execução JavaScript.
+  * [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript): Linguagem de programação para os scripts de teste.
 
-| Tipo de Teste         | Justificativa |
-|-----------------------|----------------|
-| **Testes Funcionais** | Verificar se as funcionalidades básicas funcionam como esperado (busca, navegação, acesso às matérias). |
-| **Testes de Integração** | Verificar se os sistemas internos (CMS, vídeos, links externos) estão integrados corretamente. |
-| **Testes de Interface (UI)** | Garantir que os elementos estejam visíveis, acessíveis e interativos. |
-| **Testes de Responsividade** | Validação visual e funcional em diferentes resoluções (mobile, tablet, desktop). |
-| **Testes de Performance** | Avaliar tempo de carregamento, TTI e impacto de elementos pesados (vídeos, banners). |
-| **Testes de Usabilidade** | Verificar se o usuário consegue realizar ações com facilidade. |
-| **Testes de Acessibilidade** | Garantir compatibilidade com leitores de tela e navegação por teclado. |
-| **Testes de Regressão** | Automatizados para evitar que correções causem novos problemas. |
+## 🏁 Começando
 
----
+Siga as instruções abaixo para rodar o projeto em sua máquina local.
 
-## 🧪 Cobertura de Testes
+### ✅ Pré-requisitos
 
-- Cobertura mínima de **80% das funcionalidades críticas**
-- Validação de **componentes dinâmicos**, como:
-  - Campo de busca
-  - Navegação paginada
-  - Abertura de matérias
-  - Vídeos e modais
-- Validação de links em destaques, rodapés e menus
-- Diferentes perfis de usuários simulados (leitor rápido, leitor que pesquisa, leitor que consome vídeo)
-- Testes em **resoluções múltiplas (mobile/desktop)** usando `viewport` do Cypress
+Antes de começar, certifique-se de que você tem o [Node.js](https://nodejs.org/en/) e o [npm](https://www.npmjs.com/) (ou [Yarn](https://yarnpkg.com/)) instalados.
 
----
+### 📦 Instalação
 
-## 🛠️ Ferramentas e Tecnologias Sugeridas
+1.  Clone o repositório:
+    ```sh
+    git clone https://github.com/rafaelsuzano/testecnn.git
+    ```
+2.  Navegue até o diretório do projeto:
+    ```sh
+    cd testecnn
+    ```
+3.  Instale as dependências:
+    ```sh
+    npm install
+    ```
 
-| Ferramenta          | Finalidade |
-|---------------------|------------|
-| **Cypress**         | Testes end-to-end e UI com boa visualização de erros |
-| **Jest**            | Testes unitários se o portal usar React ou similar |
-| **Lighthouse / PageSpeed** | Avaliação de performance, SEO, PWA |
-| **Percy / Applitools** | Testes visuais automatizados |
-| **axe-core + Cypress-axe** | Testes de acessibilidade |
-| **Allure / Mochawesome** | Relatórios visuais de execução de testes |
-| **GitHub Actions / GitLab CI** | Execução contínua dos testes a cada pull request |
+## 🧪 Executando os Testes
 
----
+Para executar os testes automatizados, utilize um dos comandos abaixo:
 
-## 📊 Métricas e Relatórios
+  * **Para abrir a interface do Cypress (recomendado):**
+    ```sh
+    npx cypress open
+    ```
+  * **Para rodar os testes em modo headless (via terminal):**
+    ```sh
+    npx cypress run
+    ```
 
-| Métrica                         | Objetivo |
-|--------------------------------|----------|
-| ✅ **Taxa de Sucesso dos Testes**       | % de testes que passaram por build |
-| 🧪 **Cobertura de Funcionalidades**     | Quais páginas/casos estão cobertos |
-| ⚠️ **Falhas Recorrentes**              | Casos que falham frequentemente |
-| ⏱️ **Tempo Médio de Execução**         | Tempo total dos testes end-to-end |
-| 📉 **Performance (Lighthouse Score)** | Medir performance, SEO e acessibilidade |
-| 🧼 **Clean Run Ratio**                | Quantidade de execuções sem erro |
+## 🎯 Estratégia de Testes
 
-📁 Relatórios seriam entregues em:
-- **Dashboard Allure/Mochawesome** (automático por CI/CD)
-- **PDF semanal**
-- **Planilhas de rastreio para cobertura manual**
+A estratégia de testes adotada busca cobrir as áreas mais críticas de um portal de notícias, que se caracteriza pelo alto tráfego e conteúdo dinâmico.
 
----
+  * **Tipos de Testes Propostos:**
 
-## 📋 Plano de Testes – Cenário 3 (Automatizado com Cypress)
+      * **Funcionais:** Para validar as principais funcionalidades (busca, login, comentários).
+      * **Integração:** Para garantir a comunicação entre diferentes componentes.
+      * **UI (Interface do Usuário):** Para assegurar a consistência visual.
+      * **Responsividade:** Para validar a adaptação em diferentes tamanhos de tela.
+      * **Performance:** Para medir o tempo de carregamento e a resposta da aplicação.
 
-### 🎯 Objetivo:
-Testar a jornada de busca por uma palavra-chave, paginação e abertura de matéria.
+  * **Ferramentas Sugeridas (expansão do projeto):**
 
-### 🔸 Cenário:
-> No menu de navegação superior, clicar na lupa para ativar o campo de busca. Pesquisar por “avião”. Ir até a página 2 dos resultados, abrir a primeira matéria visível e verificar se a matéria foi carregada corretamente.
+      * **Testes de Componentes:** [Jest](https://jestjs.io/), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+      * **Performance:** [Lighthouse](https://developers.google.com/web/tools/lighthouse).
+      * **Testes Visuais:** [Percy](https://percy.io/), [Applitools](https://applitools.com/).
 
----
+  * **Métricas e Relatórios:**
 
-### ✅ Casos de Teste:
+      * Acompanhamento da taxa de sucesso dos testes.
+      * Cobertura de funcionalidades críticas (mínimo de 80%).
+      * Relatórios gerados com os resultados de cada execução para análise de falhas.
 
-| ID | Etapa | Ação | Resultado Esperado |
-|----|-------|------|--------------------|
-| TC01 | Acessar o site | `cy.visit()` | Página inicial carregada |
-| TC02 | Abrir busca | Clicar na lupa | Campo de busca aparece |
-| TC03 | Buscar por termo | Digitar “avião” + Enter | Página de busca é carregada |
-| TC04 | Navegar para página 2 | Clicar na paginação | Resultados atualizados |
-| TC05 | Selecionar matéria | Clicar na primeira matéria visível | Página da matéria é aberta |
-| TC06 | Validar título | Verificar `<h1>` ou `<h2>` visível e não vazio | Conteúdo carregado corretamente |
-| TC07 | Validar status HTTP | `cy.request(url)` | Deve retornar `200 OK` |
-| TC08 | Captura visual | `cy.screenshot()` | Screenshot da matéria salva |
+## 🤝 Contribuições
 
----
+Contribuições são bem-vindas\! Se você tiver sugestões para melhorar este projeto, sinta-se à vontade para criar um "fork" do repositório e abrir um "pull request".
 
-## ✅ Conclusão
+1.  Faça um "Fork" do projeto.
+2.  Crie uma nova "branch" (`git checkout -b feature/sua-feature`).
+3.  Faça o "commit" de suas alterações (`git commit -m 'Adiciona nova feature'`).
+4.  Faça o "push" para a "branch" (`git push origin feature/sua-feature`).
+5.  Abra um "Pull Request".
 
-A estratégia acima garante testes eficientes e sustentáveis para um portal de notícias como a CNN Brasil, combinando:
-- Testes rápidos com **feedback visual**
-- Ferramentas modernas como **Cypress**
-- Cobertura de **caminhos reais de usuários**
+## 📄 Licença
 
-Essa abordagem contribui diretamente para:
-- Melhorar a qualidade percebida pelo usuário
-- Reduzir bugs de produção
-- Aumentar a confiança em cada deploy
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
----
+-----
