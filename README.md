@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🧪 Estratégia de Testes – Portal de Notícias (CNN Brasil)
 
 ## 📌 Visão Geral
@@ -127,3 +128,6 @@ Essa abordagem contribui diretamente para:
 - Aumentar a confiança em cada deploy
 
 ---
+=======
+# testecnn
+>>>>>>> dc63707d3b6a5cac79145ed84118db15c22e5910
