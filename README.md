@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🧪 Estratégia de Testes – Portal de Notícias (CNN Brasil)
 
 ## 📌 Visão Geral
