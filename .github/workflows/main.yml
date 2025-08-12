@@ -1,6 +1,6 @@
 
 
-name: CI/CD Pipeline Projeto AgiBank
+name: CI/CD Pipeline Projeto Teste CNN
 
 on:  
   workflow_dispatch:
